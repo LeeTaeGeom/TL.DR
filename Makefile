@@ -1,4 +1,4 @@
-.PHONY: venv test lint format
+.PHONY: venv test lint format install-hooks
 
 # 기본 Python 인터프리터
 PYTHON := python3
@@ -26,3 +26,6 @@ lint: ## 린트 실행 (오류 확인만)
 format: ## 포맷터 실행 (자동 수정)
 	$(VENV_BIN)/ruff check --fix src/
 	$(VENV_BIN)/ruff format src/
+
+install-hooks: ## pre-commit hook 설치
+	$(VENV_BIN)/pre-commit install
