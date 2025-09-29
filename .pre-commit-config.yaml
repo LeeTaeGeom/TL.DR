@@ -1,9 +1,11 @@
 repos:
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.1.6
+    rev: v0.13.2
     hooks:
-      # 린팅
+      # 린팅 (확인만, make format의 첫 번째 명령어와 동일)
       - id: ruff
-        args: [--fix, --exit-non-zero-on-fix]
-      # 포맷팅
+        files: ^src/
+      # 포맷팅 (확인만, make format의 두 번째 명령어와 동일)  
       - id: ruff-format
+        args: [--check]
+        files: ^src/

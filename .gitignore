@@ -171,4 +171,5 @@ cython_debug/
 .Spotlight-V100
 .Trashes
 ehthumbs.db
-Thumbs.db
+Thumbs.db# Large PDF files
+pdf/*.pdf
