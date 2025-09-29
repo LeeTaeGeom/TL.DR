@@ -2,11 +2,18 @@
 
 import sys
 from pathlib import Path
+
 import pytest
+
 
 sys.path.insert(0, str(Path(__file__).parent.parent.parent / "src"))
 
-from document_processors import ProcessorFactory, PyMuPDFProcessor, get_pdf_processor, get_best_pdf_processor
+from document_processors import (
+    ProcessorFactory,
+    PyMuPDFProcessor,
+    get_best_pdf_processor,
+    get_pdf_processor,
+)
 
 
 class TestProcessorFactory:
@@ -67,7 +74,7 @@ class TestIntegration:
         """Test factory-created processor with real PDF."""
         processor = ProcessorFactory.create_processor("pymupdf")
         pdf_files = list(Path("pdf").glob("*.pdf"))
-        
+
         if pdf_files:
             documents = processor.process_document(str(pdf_files[0]))
             assert len(documents) > 0
