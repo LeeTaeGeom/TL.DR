@@ -4,8 +4,10 @@ from typing import Dict, List, Type
 
 from src.interfaces.embedding_interface import Embedding
 
+from .bge_embedding import BgeM3Embedding
 from .e5_embedding import MultilingualE5LargeInstruct
 from .jina_embedding import JinaEmbeddingsV3
+from .qwen_embedding import Qwen3Embedding06B
 
 
 class EmbeddingFactory:
@@ -14,6 +16,8 @@ class EmbeddingFactory:
     _embeddings: Dict[str, Type[Embedding]] = {
         "e5": MultilingualE5LargeInstruct,
         "jina": JinaEmbeddingsV3,
+        "bge-m3": BgeM3Embedding,
+        "qwen3": Qwen3Embedding06B,
     }
 
     @classmethod

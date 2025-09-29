@@ -46,7 +46,8 @@ class TestEmbeddingFactory:
     def test_get_available_embeddings(self):
         names = EmbeddingFactory.get_available_embeddings()
         assert isinstance(names, list)
-        assert "e5" in names or "jina" in names
+        # At least one of the known backends should be registered
+        assert any(k in names for k in ["e5", "jina", "bge-m3", "qwen3"])
 
 
 class TestConvenienceFunctions:
