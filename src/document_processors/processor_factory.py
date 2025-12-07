@@ -2,7 +2,7 @@
 
 from typing import Dict, Type
 
-from interfaces.document_processor_interface import DocumentProcessor
+from src.interfaces.document_processor_interface import DocumentProcessor
 
 from .pymupdf_processor import PyMuPDFProcessor
 from .unstructured_processor import UnstructuredPDFProcessor

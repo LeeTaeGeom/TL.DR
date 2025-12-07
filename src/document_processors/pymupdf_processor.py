@@ -3,8 +3,8 @@ from typing import List
 
 import fitz  # PyMuPDF
 
-from interfaces.document_processor_interface import DocumentProcessor
-from interfaces.vector_db_interface import Document
+from src.interfaces.document_processor_interface import DocumentProcessor
+from src.interfaces.vector_db_interface import Document
 
 
 class PyMuPDFProcessor(DocumentProcessor):
